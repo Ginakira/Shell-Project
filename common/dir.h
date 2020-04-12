@@ -9,7 +9,8 @@
 #ifndef _DIR_H
 #define _DIR_H
 
-void get_cur_dir();
+void get_current_dir();
 void change_dir(char *path);
+void show_current_dir();
 
 #endif

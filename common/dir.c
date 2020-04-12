@@ -9,8 +9,8 @@
 #include "common.h"
 #include "head.h"
 
-void get_cur_dir() {
-    char buff[BUFF_SIZE], *pos;
+void get_current_dir() {
+    char buff[BUFF_SIZE] = {0}, *pos;
     int home_len, buff_len;
     getcwd(buff, BUFF_SIZE);
     home_len = strlen(HOME_PATH), buff_len = strlen(buff);
@@ -37,5 +37,10 @@ void change_dir(char *path) {
     if (retval < 0) {
         perror("cd");
     }
+    return;
+}
+
+void show_current_dir() {
+    printf("%s\n", CUR_DIR);
     return;
 }

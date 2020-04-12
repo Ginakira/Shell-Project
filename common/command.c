@@ -28,7 +28,7 @@ void parse_command(char *command, char *paras) {
     if (!strcmp(command, "cd")) {
         change_dir(paras);
     } else if (!strcmp(command, "pwd")) {
-
+        show_current_dir();
     }
     return;
 }
