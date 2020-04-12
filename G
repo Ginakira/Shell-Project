@@ -1,0 +1,1 @@
+gcc shell.c ./common/common.c ./common/dir.c -o shell
