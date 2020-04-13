@@ -11,4 +11,5 @@
 
 void get_command(char *command, char *paras);
 void parse_command(char *command, char *paras);
+void excute_command(char *command, char *paras);
 #endif

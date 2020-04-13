@@ -5,6 +5,8 @@
     Github: https://github.com/Ginakira
     Created Time: 2020/04/12 21:05:08
 ************************************************************/
+#include "command.h"
+
 #include "common.h"
 #include "dir.h"
 #include "head.h"
@@ -35,6 +37,20 @@ void parse_command(char *command, char *paras) {
         return;
     }
 
-    printf("%s: command not found\n", command);
+    excute_command(command, paras);
+    // printf("%s: command not found\n", command);
+    return;
+}
+
+void excute_command(char *command, char *paras) {
+    char cmd_witth_paras[BUFF_SIZE] = {0};
+    char buffer[BUFF_SIZE] = {0};
+    sprintf(cmd_witth_paras, "%s %s", command, paras);
+    FILE *fp = popen(cmd_witth_paras, "r");
+    while (fgets(buffer, BUFF_SIZE, fp)) {
+        printf("%s", buffer);
+        memset(buffer, 0, BUFF_SIZE);
+    }
+    pclose(fp);
     return;
 }
