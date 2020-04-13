@@ -41,6 +41,8 @@ void change_dir(char *path) {
 }
 
 void show_current_dir() {
-    printf("%s\n", CUR_DIR);
+    char buff[BUFF_SIZE] = {0};
+    getcwd(buff, BUFF_SIZE);
+    printf("%s\n", buff);
     return;
 }

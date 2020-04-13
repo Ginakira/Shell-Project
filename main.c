@@ -6,6 +6,7 @@
     Created Time: 2020/04/12 19:20:47
 ************************************************************/
 
+#include "common/color.h"
 #include "common/command.h"
 #include "common/common.h"
 #include "common/dir.h"
@@ -20,7 +21,7 @@ int main() {
         get_current_dir();
         print_header();
         get_command(command, paras);
-        printf("COMMAND: %s, PARAS: %s\n", command, paras);
+        printf(YELLOW "[DEV]" NONE " COMMAND: %s, PARAS: %s\n", command, paras);
         parse_command(command, paras);
     }
     return 0;
